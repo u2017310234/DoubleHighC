@@ -28,7 +28,5 @@
 
 ---
 
-## 3. 安装依赖
+## 3. 联系作者
 
-```bash
-pip install -r requirements.txt

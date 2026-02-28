@@ -68,7 +68,7 @@ def get_redis_client():
 
         client = redis.Redis(
             host=host,
-            port=int(os.environ.get("REDIS_PORT", 6380)),
+            port=int(os.environ.get("REDIS_PORT", 6379)),
             password=os.environ.get("REDIS_PASSWORD", ""),
             ssl=os.environ.get("REDIS_SSL", "true").lower() == "true",
             db=0,
@@ -160,7 +160,8 @@ CRAWLER_BASE_URL = os.environ.get("CRAWLER_BASE_URL", "")
 CRAWLER_MAX_PAGES = int(os.environ.get("CRAWLER_MAX_PAGES", "18"))
 CRAWLER_CHUNK_SIZE = int(os.environ.get("CRAWLER_CHUNK_SIZE", "50"))
 CRAWLER_MAX_WORKERS = int(os.environ.get("CRAWLER_MAX_WORKERS", "1"))
-CRAWLER_RATE_LIMIT_SECONDS = float(os.environ.get("CRAWLER_RATE_LIMIT_SECONDS", "4.2"))
+# Rate limit between API calls to avoid quota exhaustion
+CRAWLER_RATE_LIMIT_SECONDS = float(os.environ.get("CRAWLER_RATE_LIMIT_SECONDS", "4.0"))
 
 # --- HTTP Headers ---
 DEFAULT_HEADERS = {

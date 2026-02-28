@@ -90,7 +90,7 @@ python -m pytest tests/ -v
 | `DAILY_PASSWORD` | 是 | PostgreSQL 密码 |
 | `DAILY_HOST` | 是 | PostgreSQL 主机地址 |
 | `DAILY_PORT` | 否 | PostgreSQL 端口（默认 5432） |
-| `Y*` | 是 | Google Gemini API 密钥（Y 开头的环境变量，支持多个） |
+| `Y*` | 是 | Google Gemini API 密钥（默认以 `Y` 开头的环境变量，如 `Y1`, `Y2`，前缀可通过 `API_KEY_PREFIX` 配置） |
 | `CRAWLER_BASE_URL` | 是 | 爬虫目标网站 URL |
 | `NOTION_API_KEY` | 否 | Notion Integration Token |
 | `NOTION_PAGE_ID` | 否 | Notion 目标页面 ID |

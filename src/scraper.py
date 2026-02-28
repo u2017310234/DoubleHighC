@@ -93,7 +93,7 @@ def scrape_full_content(url, timeout=20):
     Raises:
         requests.RequestException: If the request fails.
     """
-    logger.info("正在抓取全文: %s", url[:70])
+    logger.info("正在抓取全文: %s...", url[:70] if len(url) > 70 else url)
     response = requests.get(url, headers=DEFAULT_HEADERS, timeout=timeout)
     response.raise_for_status()
     logger.info("抓取成功。")

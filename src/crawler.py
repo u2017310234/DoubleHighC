@@ -61,7 +61,7 @@ def screen_single_article(article, api_key_pool, model_name, system_prompt):
         "is_relevant": result["is_relevant"],
         "model_used": result["model_used"],
         "screening_duration_ms": result["screening_duration_ms"],
-        "processed_at": time.strftime("%Y-%m-%d %H:%M:%S %Z", time.gmtime()),
+        "processed_at": time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime()),
     }
 
 
